@@ -1,10 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
-
 a{
     text-decoration: none;
 }
@@ -27,19 +20,26 @@ ul{
     /*background-position: center center;   Центрирует изображение */
 }
 
-.header .navbar{
+.header .navbar {
     width: 100%;
     height: 80px;
     display: flex;
     align-items: center;
     padding-top: 20px;
 }
-
+.logo-menu-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
 
 .logo {
+    margin-right: 10px;
+}
+/* .logo {
     margin-left: 2em;
     margin-right: auto;
-}
+} */
 
 .logo a{
     display: block;
@@ -48,10 +48,13 @@ ul{
     font-size: 30px;
 }
 
-.menu {
+/* .menu {
     width: 40%;
     margin-left: auto;
     margin-right: auto; 
+} */
+.menu {
+    flex: 1;
 }
 
 .menu ul li {
@@ -334,8 +337,8 @@ ul{
     margin-left: 240px;
 }
 
-.main .bl {
-}
+/* .main .bl {
+} */
 
 .main .bl div {
     display: inline-block;
@@ -413,7 +416,7 @@ ul{
 }
 
 
-.projects-section {
+/* .projects-section {
     position: absolute;
     top: 50vh;
     right: 0;
@@ -422,7 +425,8 @@ ul{
     margin-right: 40px;
     background-color: rgba(195, 40, 101, 0.1);
     border-radius: 10px;
-}
+} */
+
 
 .project {
     margin-bottom: 40px;
@@ -490,4 +494,165 @@ ul{
     text-transform: uppercase;
     padding-bottom: 20px;
     border-bottom: 2px solid #c32865;
+}
+
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #04090C;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Боковое позиционирование проектов на широких экранах */
+@media screen and (min-width: 1440px) {
+    .projects-section {
+        position: absolute;
+        top: 50vh;
+        right: 0;
+        width: 35%;
+        padding: 40px;
+        margin-right: 40px;
+        background-color: rgba(195, 40, 101, 0.1);
+        border-radius: 10px;
+    }
+}
+
+/* На узких экранах проекты идут подряд */
+@media screen and (max-width: 1439px) {
+    .projects-section {
+        position: static;
+        width: 100%;
+        padding: 40px 20px;
+        background-color: rgba(195, 40, 101, 0.1);
+        border-radius: 10px;
+        margin-top: 40px;
+    }
+}
+
+/* Настройка фото */
+.header {
+    background-size: cover;
+    background-position: 71% center; /* Сдвигаем фото влево, но чуть подрезаем справа */
+}
+
+/* Делаем адаптивность */
+@media screen and (max-width: 1024px) {
+    .main {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .main .description, .main .experience, .main .courses, .main .skills, .main .hd, .main .str .h {
+        width: 100%;
+        margin-left: 0;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .projects-section {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header .navbar {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .menu ul {
+        display: flex;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .menu ul li {
+        margin: 0;
+    }
+
+    .contact-info {
+        width: 100%;
+        text-align: center;
+        margin: 20px 0 0 0;
+        padding-top: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .contact-info ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .app-text {
+        text-align: left;
+        padding: 20px;
+        max-width: 90%;
+    }
+    
+    .app-text h1 {
+        font-size: 32px;
+        text-align: left;
+        word-wrap: break-word;
+    }
+
+    .primary-btn {
+        text-align: left;
+    }
+
+    .footer .agreed {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        background: rgba(195, 40, 101, 0.1);
+        border-radius: 5px;
+    }
+
+    .main .exp {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin-left: 20px;
+      }
+    
+    .main .agreed {
+    margin-left: 0px;
+    }
+
+    .social-icons{
+        padding-right: 300px;
+
+    }
+
+    .play-btn {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .play-btn-inner {
+        display: flex;
+        gap: 10px;
+    }
+
+    .play-btn-inner span {
+        white-space: normal;
+        text-align: center;
+    }
+
+    .btn-group span{
+        margin-left: 0px;
+    }
+
 }
