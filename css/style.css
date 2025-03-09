@@ -578,6 +578,19 @@ body {
         flex-wrap: wrap;
         justify-content: center;
     }
+
+	.primary-btn::before {
+		width: 350px;
+		margin-top: 50px;
+	}
+	.app-text {
+		padding-left: 30px;
+		font-size: 20px;
+	}
+
+	.app-text h1 {
+		font-size: 64px;
+	}
 }
 
 @media screen and (width <= 768px) {
