@@ -17,8 +17,10 @@ ul {
 	background-image: url("../img/er.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	/* Изображение будет уменьшаться до размера контейнера (cover)*/
-	/*background-position: center center;   Центрирует изображение */
+
+	/* Изображение будет уменьшаться до размера контейнера (cover) */
+
+	/* background-position: center center;   Центрирует изображение */
 }
 
 .header .navbar {
@@ -133,7 +135,6 @@ ul {
 .app-text p {
 	font-size: 19px;
 	margin: 30px 30px 30px 0;
-	letter-spacing: 1px;
 	color: #fff;
 	padding-right: 250px;
 	line-height: 1.5;
@@ -147,7 +148,7 @@ ul {
 	margin-top: 20px;
 }
 
-.primary-btn:before {
+.primary-btn::before {
 	content: '';
 	position: absolute;
 	width: 260px;
@@ -183,7 +184,6 @@ ul {
 	display: inline-flex;
 	width: 80px;
 	height: 80px;
-	-webkit-transition: border-color .3s ease-out;
 	transition: border-color .3s ease-out;
 	text-align: center;
 	border: 1px solid #fff;
@@ -255,12 +255,8 @@ ul {
 
 .main .str .h {
 	font-weight: 600;
-	color: var(--primary-color);
 	font-size: 20px;
-	margin-left: 240px;
-	margin-right: 0;
-	margin-top: 40px;
-	margin-bottom: 40px;
+	margin: 40px 0 40px 240px;
 	width: 40%;
 	color: #c32865;
 }
@@ -275,7 +271,7 @@ ul {
 
 .main .exp {
 	display: -webkit-box;
-	display: -ms-flexbox;
+	display: flexbox;
 	display: flex;
 	margin-left: 240px;
 }
@@ -304,7 +300,7 @@ ul {
 
 .main .experience {
 	display: -webkit-box;
-	display: -ms-flexbox;
+	display: flexbox;
 	display: flex;
 	margin-left: 240px;
 }
@@ -320,7 +316,7 @@ ul {
 
 .main .courses {
 	display: -webkit-box;
-	display: -ms-flexbox;
+	display: flexbox;
 	display: flex;
 	margin-top: 20px;
 	margin-left: 240px;
@@ -340,25 +336,23 @@ ul {
 	margin-left: 240px;
 }
 
-/* .main .bl {
-} */
-
 .main .bl div {
 	display: inline-block;
 	border: 0;
 	width: auto;
 	max-width: 100%;
 	margin-right: 10px;
-	background-color: rgba(195, 40, 101, 0.3);
+	background-color: rgb(195 40 101 / 30%);
 	padding: 0 11px;
-	height: 30px;
+
+	/* height: 30px; */
 	line-height: 30px;
 	border-radius: 5px;
 }
 
 .main .footer {
 	margin-top: 60px;
-	background-color: rgba(7, 20, 28, 0.7);
+	background-color: rgb(7 20 28 / 70%);
 	height: 150px;
 }
 
@@ -410,26 +404,15 @@ ul {
 }
 
 .soc-ic ul li a:hover {
-	background: #ffffff;
+	background: #fff;
 	color: #fff;
 }
 
 .experience__details_edu ul li {
 	margin-left: 20px;
+
 	/* Или padding-left */
 }
-
-
-/* .projects-section {
-    position: absolute;
-    top: 50vh;
-    right: 0;
-    width: 35%;
-    padding: 40px;
-    margin-right: 40px;
-    background-color: rgba(195, 40, 101, 0.1);
-    border-radius: 10px;
-} */
 
 
 .project {
@@ -467,7 +450,7 @@ ul {
 
 .tech-stack {
 	font-size: 14px;
-	color: rgba(255, 255, 255, 0.8);
+	color: rgb(255 255 255 / 80%);
 }
 
 .tech-stack strong {
@@ -505,7 +488,7 @@ ul {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Montserrat', sans-serif;
+	font-family: Montserrat, sans-serif;
 }
 
 body {
@@ -516,7 +499,7 @@ body {
 }
 
 /* Боковое позиционирование проектов на широких экранах */
-@media screen and (min-width: 1440px) {
+@media screen and (width >= 1440px) {
 	.projects-section {
 		position: absolute;
 		top: 50vh;
@@ -524,18 +507,26 @@ body {
 		width: 35%;
 		padding: 40px;
 		margin-right: 40px;
-		background-color: rgba(195, 40, 101, 0.1);
+		background-color: rgb(195 40 101 / 10%);
 		border-radius: 10px;
 	}
+
+	.main .skills .bl {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+        justify-content: center;
+		width: 60%;
+    }
 }
 
 /* На узких экранах проекты идут подряд */
-@media screen and (max-width: 1439px) {
+@media screen and (width <= 1439px) {
 	.projects-section {
 		position: static;
 		width: 100%;
 		padding: 40px 20px;
-		background-color: rgba(195, 40, 101, 0.1);
+		background-color: rgb(195 40 101 / 10%);
 		border-radius: 10px;
 		margin-top: 40px;
 	}
@@ -545,11 +536,12 @@ body {
 .header {
 	background-size: cover;
 	background-position: 71% center;
+
 	/* Сдвигаем фото влево, но чуть подрезаем справа */
 }
 
 /* Делаем адаптивность */
-@media screen and (max-width: 1024px) {
+@media screen and (width <= 1024px) {
 	.main {
 		width: 100%;
 		padding: 20px;
@@ -572,7 +564,23 @@ body {
 	}
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (width <= 1250px) {
+	.header .navbar {
+		height: auto;
+		flex-direction: column;
+		align-items: center;
+		padding: 10px 20px;
+	} 
+
+	.main .skills .bl {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media screen and (width <= 768px) {
 	.header .navbar {
 		height: auto;
 		flex-direction: column;
@@ -593,9 +601,9 @@ body {
 	.contact-info {
 		width: 100%;
 		text-align: center;
-		margin: 20px 0 0 0;
+		margin: 20px 0 0;
 		padding-top: 10px;
-		border-top: 1px solid rgba(255, 255, 255, 0.2);
+		border-top: 1px solid rgb(255 255 255 / 20%);
 	}
 
 	.contact-info ul {
@@ -621,7 +629,7 @@ body {
 		text-align: left;
 	}
 
-	.primary-btn:before {
+	.primary-btn::before {
 		width: 230px;
 		margin-top: 10px;
 	}
@@ -631,19 +639,19 @@ body {
 		width: 100%;
 		text-align: center;
 		padding: 10px 0;
-		background: rgba(195, 40, 101, 0.1);
+		background: rgb(195 40 101 / 10%);
 		border-radius: 5px;
 	}
 
 	.main .exp {
 		display: -webkit-box;
-		display: -ms-flexbox;
+		display: flexbox;
 		display: flex;
 		margin-left: 20px;
 	}
 
 	.main .agreed {
-		margin-left: 0px;
+		margin-left: 0;
 	}
 
 	.social-icons {
@@ -673,12 +681,12 @@ body {
 	}
 
 	.btn-group span {
-		margin-left: 0px;
+		margin-left: 0;
 	}
 
 	.main .skills,
 	.main .str .h {
-		padding: 0px;
+		padding: 0;
 		margin-top: 10px;
 		margin-bottom: 10px;
 	}
@@ -692,19 +700,19 @@ body {
 	}
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (width <= 375px) {
 	.header {
 		width: max-content;
 	}
 
 	.main {
-		padding: 0px;
+		padding: 0;
 		width: 68vh;
 	}
 
 	.main .skills,
 	.main .str .h {
-		padding: 0px;
+		padding: 0;
 		margin-top: 10px;
 		margin-bottom: 10px;
 		margin-left: 20px;
